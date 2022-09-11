@@ -1,1 +1,0 @@
-# nextjs-landing-pages-studio

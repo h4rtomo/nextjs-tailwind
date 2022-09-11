@@ -1,30 +1,35 @@
-# Next.js landing pages
+# 🏄 Tembaya with Docker
 
-_SEO friendly page builder in React.js. Heroes, sign-up forms and calls to action._
+## 📦 Setup
 
-Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-nextjs-landing-pages).
+### 🖥️ Development environment
 
-## What you have
+- Run
 
-- A dynamic frontend with [Next.js](https://nextjs.org)
-- Structured content using [Sanity.io](https://www.sanity.io)
-- Global deployment on [Netlify](https://netlify.com)
+```bash
+cd dockerized # enter in the project
+docker-compose up
+```
 
-## Quick start
+- Rename all the `.env.example` to `.env`.
 
-1. Clone this repository
-2. `npm install` in the project root folder on local
-3. `npm run dev` to start the studio and frontend locally
-   - Your studio should be running on [http://localhost:3333](http://localhost:3333)
-   - Your frontend should be running on [http://localhost:3000](http://localhost:3000)
-4. `npm run build` to build to production locally
+- Create a `.env` file in the root of the directory.
 
-## Deploy changes
+- Visit `http://localhost:3000/`
 
-Netlify automatically deploys new changes commited to master on GitHub. If you want to change deployment branch, do so in [build & deploy settings on Netlify](https://www.netlify.com/docs/continuous-deployment/#branches-deploys).
+### ⚒️ Linting
 
-## Stuck? Get help
+#### In VSCode
 
-[![Slack Community Button](https://slack.sanity.io/badge.svg)](https://slack.sanity.io/)
+- Install ESLint and Prettier VSCode extensions.
+- **Done! Now you have live linting and autofixing setup!**
 
-Join [Sanity’s developer community](https://slack.sanity.io) or ping us [on twitter](https://twitter.com/sanity_io).
+#### In Any other IDE
+
+- Run `yarn lint` in indivisual `packages` to check for linting errors.
+- Run `yarn lint:fix` to fix the linting errors.
+
+## 🦄 Info
+
+- We are following the micro-services architechture. That means, to install npm modules, you'll have to run `yarn add` in the respective packages.
+- To customize the linter, use `.eslintrc` and `.prettierrc` file. [Learn more](https://eslint.org)
