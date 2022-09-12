@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import DataTable from "react-data-table-component"
 
-import Sidebar from "../components/sidebar"
+import Sidebar from "../../components/sidebar"
 
 export default function App() {
   const [customers, setCustomers] = useState([])

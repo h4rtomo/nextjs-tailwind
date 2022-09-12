@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import DataTable from "react-data-table-component"
 
-import Sidebar from "../components/sidebar"
+import Sidebar from "../../components/sidebar"
 
 export default function App() {
   const [customers, setCustomers] = useState([])
@@ -11,7 +11,7 @@ export default function App() {
   const [totalRows, setTotalRows] = useState(0)
   const [perPage, setPerPage] = useState(10)
   const [currentPage, setCurrentPage] = useState(1)
-  const url = "http://localhost:8026/api/role/list/"
+  const url = "http://192.168.1.5:8026/api/role/list/"
 
   const fetchData = async (page, size = perPage) => {
     setLoading(true)
