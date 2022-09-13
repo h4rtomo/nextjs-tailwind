@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 
 import axios from "axios"
 import DataTable from "react-data-table-component"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 import Sidebar from "../components/sidebar"
 
@@ -12,7 +14,11 @@ export default function App() {
   const [perPage, setPerPage] = useState(10)
   const [currentPage, setCurrentPage] = useState(1)
   const url = "http://localhost:8026/api/role/list/"
-
+  const notify = () =>
+    toast("Wow so easy!", {
+      type: "error",
+      theme: "colored",
+    })
   const fetchData = async (page, size = perPage) => {
     setLoading(true)
     axios
@@ -75,9 +81,11 @@ export default function App() {
   return (
     <div className="flex h-auto min-h-screen font-sans">
       <Sidebar />
+      <ToastContainer />
       <div className="grow-[1]  bg-[#EEE]">
         <div className="my-auto h-full px-10 flex flex-col">
           <div className="mt-5 bg-white p-4 rounded-md shadow-lg shadow-sky-100">
+            <button onClick={notify}>Notify!</button>
             <DataTable
               columns={columns}
               data={customers}
